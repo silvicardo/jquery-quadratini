@@ -7,12 +7,30 @@
 
 console.log('Hi from main.js');
 
-//64 quadratini, estrarre le posizioni dei quadratini
-var posizioniRossi = [0,1,8,9,12,15,18,20,25,34,59,60,61,62,63];
+//64 quadratini generati da JS
+for (var i = 0; i < 64; i++) {
+  document.getElementsByClassName('quadratini')[0].innerHTML += '<div class="quadratino"></div>'
+}
 
+//generiamo randomicamente le 16 posizioni dei quadratini rossi
+var posizioniRossi = [];
 
-//codice per modificare attributo colore in base all'oggetto toccato
+while (posizioniRossi.length < 16) {
 
+  var numeroRandom = generaNumeroCasualeTra(0,63);
+  if (!posizioniRossi.includes(numeroRandom)) {
+    posizioniRossi.push(numeroRandom);
+  }
+}
+
+console.log(posizioniRossi);
+
+//Ascoltando il click su ogni quadratino
+//se il 'background-color' è 'white'
+//se l'array di posizioniRossi include l'indice restituito
+//dal quadratino toccato
+//modifichiamo il background in red e aumentiamo il relativo
+//contatore altrimenti lo facciamo per la controparte verde
 var tuttiIQuadratini = $('.quadratino');
 var contatoreVerdi = $('.contatore.verdi h1');
 var contatoreRossi = $('.contatore.rossi h1');
@@ -23,13 +41,20 @@ tuttiIQuadratini.click(function() {
 
   var quadratinoCliccato = $(this);
 
-  if (posizioniRossi.includes(quadratinoCliccato.index())) {
-    quadratinoCliccato.css('background', 'red');
-    rossiScoperti++;
-    contatoreRossi.text(rossiScoperti);
-  } else {
-    quadratinoCliccato.css('background', 'green');
-    verdiScoperti++;
-    contatoreVerdi.text(verdiScoperti);
+  if (quadratinoCliccato.css('background-color') == 'rgb(255, 255, 255)') {
+    if (posizioniRossi.includes(quadratinoCliccato.index())) {
+      quadratinoCliccato.css('background', 'red');
+      rossiScoperti++;
+      contatoreRossi.text(rossiScoperti);
+    } else {
+      quadratinoCliccato.css('background', 'green');
+      verdiScoperti++;
+      contatoreVerdi.text(verdiScoperti);
+    }
   }
 });
+
+//FUNZIONI
+function generaNumeroCasualeTra(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}

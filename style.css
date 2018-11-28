@@ -15,12 +15,13 @@
 }
 
 header {
+  margin: 50px auto;
   text-align: center;
 }
 
 header h1 {
-  margin: 50px auto;
-  text-transform: uppercase
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .contatori {
