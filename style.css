@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #main_container {
@@ -12,6 +13,14 @@
   margin: 0 auto;
   background: yellow;
 }
+
+
+header h1 {
+  margin: 50px auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 
 .quadratini {
   margin: 0 auto;
@@ -25,5 +34,5 @@
   height: 80px;
   float: left;
   border : 1px solid black;
-  background:white;
+  background: white;
 }

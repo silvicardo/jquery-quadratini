@@ -5,8 +5,23 @@
 //Extra: Sopra alla griglia deve esserci un contatore che conta
 //quanti rossi e quanti verdi sono stati scoperti
 
+console.log('Hi from main.js');
 
 //64 quadratini, estrarre le posizioni dei quadratini
-var posizioniRossi = [1,8,9,12,15,18,20,25,34,59,60,61,62,63,64];
+var posizioniRossi = [0,1,8,9,12,15,18,20,25,34,59,60,61,62,63];
 
 //codice per modificare attributo colore in base all'oggetto toccato
+
+var tuttiIQuadratini = $('.quadratino');
+
+tuttiIQuadratini.click(function(){
+  // alert('cliccato');
+
+  var quadratinoCliccato = $(this);
+
+  if (posizioniRossi.includes(quadratinoCliccato.index())) {
+    quadratinoCliccato.css('background', 'red');
+  } else {
+    quadratinoCliccato.css('background', 'green');
+  }
+});
