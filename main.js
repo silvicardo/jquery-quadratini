@@ -17,7 +17,7 @@ var posizioniRossi = [];
 
 while (posizioniRossi.length < 16) {
 
-  var numeroRandom = generaNumeroCasualeTra(0,63);
+  var numeroRandom = generaNumeroCasualeTra(0, 63);
   if (!posizioniRossi.includes(numeroRandom)) {
     posizioniRossi.push(numeroRandom);
   }
