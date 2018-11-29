@@ -15,7 +15,7 @@ for (var i = 0; i < 64; i++) {
 //generiamo randomicamente le 16 posizioni dei quadratini rossi
 var posizioniRossi = [];
 
-while (posizioniRossi.length < 16) {
+while (posizioniRossi.length < 15) {
 
   var numeroRandom = generaNumeroCasualeTra(0, 63);
   if (!posizioniRossi.includes(numeroRandom)) {
